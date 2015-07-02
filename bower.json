@@ -1,0 +1,21 @@
+{
+  "name": "overlay.js",
+  "description": "Slim fast modern overlay, no dependencies — just the essentials",
+  "version": "1.0.0",
+  "authors": [
+    "Bruno Correia <mail@bcorreia.com>"
+  ],
+  "main": [
+    "dist/overlay.js",
+    "dist/overlay.min.js"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "components",
+    "test",
+    "tests"
+  ]
+}

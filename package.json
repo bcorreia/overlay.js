@@ -1,0 +1,22 @@
+{
+  "name": "overlay.js",
+  "version": "1.0.0",
+  "description": "Slim fast modern overlay, no dependencies — just the essentials",
+  "main": "dist/overlay.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bcorreia/overlay.js.git"
+  },
+  "author": {
+    "name": "Bruno Correia",
+    "email": "mail@bcorreia.com",
+    "url": "http://bcorreia.com"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-banner": "^0.4.0",
+    "grunt-contrib-copy": "^0.8.0",
+    "grunt-contrib-uglify": "^0.9.1"
+  }
+}
