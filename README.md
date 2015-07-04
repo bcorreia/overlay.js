@@ -3,7 +3,7 @@
 [![npm version](https://img.shields.io/npm/v/overlay.js.svg?style=flat)](https://www.npmjs.com/package/overlay.js)
 [![Build Status](https://travis-ci.org/bcorreia/overlay.js.svg?branch=master)](https://travis-ci.org/bcorreia/overlay.js)
 
-Slim fast modern overlay, no dependencies — just the essentials<br />
+Slim fast overlay, no dependencies — just the basics<br />
 [**Demo**](http://bcorreia.com/projects/overlay.js/src/demo.html)
 
 ---

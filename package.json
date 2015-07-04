@@ -1,7 +1,7 @@
 {
   "name": "overlay.js",
   "version": "1.0.0",
-  "description": "Slim fast modern overlay, no dependencies — just the essentials",
+  "description": "Slim fast overlay, no dependencies — just the basics",
   "main": "dist/overlay.js",
   "repository": {
     "type": "git",

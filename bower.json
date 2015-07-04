@@ -1,6 +1,6 @@
 {
   "name": "overlay.js",
-  "description": "Slim fast modern overlay, no dependencies — just the essentials",
+  "description": "Slim fast overlay, no dependencies — just the basics",
   "version": "1.0.0",
   "authors": [
     "Bruno Correia <mail@bcorreia.com>"
