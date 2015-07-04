@@ -20,14 +20,21 @@ npm install overlay.js
 ```javascript
 element.addEventListener('click', function() {
     var layer = new Overlay({
-        html: ''
+        html: '',
+        onAppend: function() {},
+        onRemove: function() {}
     });
 });
 ```
 
-| Options | Description | Default | Type
-:--- | :--- | ---: | ---:
-| `html` | formatted HTML | `''` | `string`
+### Callbacks
+```javascript
+ // called right after `html` has been appended to document
+onAppend: function() {}
+
+// called right after `html` has been remove from document
+onRemove: function() {}
+```
 
 ## CSS
 ```css

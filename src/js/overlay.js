@@ -1,6 +1,12 @@
 var Overlay = (function() {
     'use strict';
 
+    var defaults = {
+        html: '',
+        onAppend: function() {},
+        onRemove: function() {}
+    };
+
     var methods = {
         compile: function() {
             var stage = document.createElement('div'),
@@ -13,25 +19,48 @@ var Overlay = (function() {
             stage.classList.add('overlay');
             stage.innerHTML = '<div class="-inner"></div>';
             stage.firstChild.appendChild(close);
-            stage.firstChild.insertAdjacentHTML('beforeend', this.html);
+            stage.firstChild.insertAdjacentHTML('beforeend', this.settings.html);
 
             close.addEventListener('click', function() {
-                this.remove.call(stage);
+                this.remove(stage);
             }.bind(this));
 
-            this.append.call(stage);
+            this.append(stage);
         },
-        append: function() {
-            document.body.appendChild(this);
+        append: function(stage) {
+            document.body.appendChild(stage);
+            return this.settings.onAppend(); // callback fn
         },
-        remove: function() {
-            document.body.removeChild(this);
+        remove: function(stage) {
+            document.body.removeChild(stage);
+            return this.settings.onRemove(); // callback fn
         }
     }
 
-    function Overlay(obj) {
+    /**
+     * merge defaults with user options
+     * @param {Object} defaults Default settings
+     * @param {Object} options User options
+     * @returns {Object} Merged values of defaults and options
+     *
+     */
+     function extend(defaults, options) {
+         var a = Object.create(defaults);
+         Object.keys(options).map(function (prop) {
+             prop in a && (a[prop] = options[prop]);
+         });
+         return a;
+     }
+
+     /**
+      * constructor
+      * @param {Object} options
+      *
+      */
+    function Overlay(options) {
+        var settings = extend(defaults, options || {});
         var _ = Object.create(methods, {
-            html: { value: obj.html }
+            settings: { value: settings }
         })
         _.compile();
     }
