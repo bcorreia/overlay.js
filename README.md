@@ -39,11 +39,11 @@ onRemove: function() {}
 ## CSS
 ```css
 /* required */
-.overlay                                { background: rgba(0, 0, 0, 0.75); width: 100vw; height: 100vh; position:fixed; top:0; animation: fade-in .5s; }
-.overlay .-inner                        { width: 100vw; height: 100vh; display: flex; display: -webkit-flex; align-items: center; -webkit-align-items: center; justify-content:center; -webkit-justify-content:center; -ms-flex-pack:justify; }
+.overlay             { background: rgba(0, 0, 0, 0.75); width: 100vw; height: 100vh; position:fixed; top:0; animation: fade-in .5s; }
+.overlay .-inner     { width: 100vw; height: 100vh; display: flex; display: -webkit-flex; align-items: center; -webkit-align-items: center; justify-content:center; -webkit-justify-content:center; -ms-flex-pack:justify; }
 
 /* suggested */
-.overlay .-close                        { padding: 8px 18px; border-radius: 4px; color: #FFF; position: absolute; top: 32px; right: 36px; font-weight: 600; border: 1px solid #FFF; text-transform: uppercase; transition: all 1s; }
+.overlay .-close     { padding: 8px 18px; border-radius: 4px; color: #FFF; position: absolute; top: 32px; right: 36px; font-weight: 600; border: 1px solid #FFF; text-transform: uppercase; transition: all 1s; }
 ```
 ---
 
