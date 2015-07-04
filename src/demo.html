@@ -2,69 +2,30 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title></title>
-    <style type="text/css" media="screen">
-        body                { margin:0; }
-        .overlay            { background: rgba(0, 0, 0, 0.75); width: 100vw; height: 100vh; position:fixed; top:0; animation: fade-in .5s; }
-        .overlay .-inner    { width: 100vw; height: 100vh; }
-        .overlay .-inner    { display: flex; display: -webkit-flex; align-items: center; -webkit-align-items: center; justify-content:center; -webkit-justify-content:center; -ms-flex-pack:justify; }
-
-        .entry              { background: yellow; }
-
-        @-webkit-keyframes fade-in {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @keyframes fade-in {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-    </style>
+    <title>overlay.js</title>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:200,300,600' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" media="all" href="./css/normalize.css" />
+    <link rel="stylesheet" media="all" href="./css/demo.css?v=1.0" />
 </head>
 <body>
-    <div class="stage">
-        <div class="entry">
-            <div> <!-- content -->
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </div>
+    <section>
+        <h1>Overlay.js</h1>
+        <p>Slim fast modern overlay, no dependencies — just the essentials</p>
+        <div class="demo">
+            <a data-video="36Jy-sbUGZU" href="#">øpen</a>
         </div>
-        <div class="entry">
-            <div> <!-- content -->
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </div>
+        <div class="documentation">
+            <a href="https://github.com/bcorreia/overlay.js">
+                <span class="text-hide github">Github</span>
+                <p><span>Documentation on Github</span></p>
+            </a>
         </div>
-        <div class="entry">
-            <div> <!-- content -->
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </div>
-        </div>
-        <a class="foobar" href="#" data-video="TD_IlSSFVX4">Open video</a>
-    </div>
+        <p><small>Created with care and love. Bruno Correia</small></p>
+    </section>
 
+    <script src="./js/overlay.js"></script>
     <script>
-        var el = document.querySelector('.foobar'),
+        var el = document.querySelector('.demo > a'),
             video = el.getAttribute('data-video');
 
         el.addEventListener('click', function() {

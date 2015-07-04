@@ -1,3 +1,10 @@
+/**
+ * overlay.js - version 1.0.0
+ *
+ * https://github.com/bcorreia/overlay.js.git
+ * Bruno Correia - mail@bcorreia.com
+ *
+ */
 var Overlay = (function() {
     'use strict';
 
