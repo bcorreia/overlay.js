@@ -44,8 +44,18 @@ onRemove: function() {}
 
 /* suggested */
 .overlay .-close     { padding: 8px 18px; border-radius: 4px; color: #FFF; position: absolute; top: 32px; right: 36px; font-weight: 600; border: 1px solid #FFF; text-transform: uppercase; transition: all 1s; }
-```
----
 
+/* overlay fade-in animation */
+@-webkit-keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+```
+
+---
 ## License
 This software is free to use under the [MIT license](https://github.com/bcorreia/overlay.js/blob/master/license.md).
