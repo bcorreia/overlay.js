@@ -1,5 +1,5 @@
 /**
- * overlay.js - version 1.0.0
+ * overlay.js - version 1.0.1
  *
  * https://github.com/bcorreia/overlay.js.git
  * Bruno Correia - mail@bcorreia.com
@@ -28,7 +28,8 @@ var Overlay = (function() {
             stage.firstChild.appendChild(close);
             stage.firstChild.insertAdjacentHTML('beforeend', this.settings.html);
 
-            close.addEventListener('click', function() {
+            close.addEventListener('click', function(event) {
+                event.preventDefault();
                 this.remove(stage);
             }.bind(this));
 

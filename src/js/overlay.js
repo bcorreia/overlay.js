@@ -21,7 +21,8 @@ var Overlay = (function() {
             stage.firstChild.appendChild(close);
             stage.firstChild.insertAdjacentHTML('beforeend', this.settings.html);
 
-            close.addEventListener('click', function() {
+            close.addEventListener('click', function(event) {
+                event.preventDefault();
                 this.remove(stage);
             }.bind(this));
 
