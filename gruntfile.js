@@ -21,7 +21,8 @@ module.exports = function (grunt) {
             },
             all: {
                 files: {
-                    'dist/overlay.min.js': ['src/js/overlay.js']
+                    'dist/overlay.min.js': ['src/js/overlay.js'],
+                    'src/js/app.pkg.min.js': ['src/js/app.pkg.js']
                 }
             }
         },
