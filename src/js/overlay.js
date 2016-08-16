@@ -68,3 +68,11 @@ var Overlay = (function() {
 
     return Overlay;
 }());
+
+/**
+ * CommonJS module is defined
+ *
+ */
+if ( typeof module !== 'undefined' && module.exports ) {
+    module.exports = Overlay;
+}
