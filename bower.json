@@ -1,7 +1,7 @@
 {
   "name": "overlay.js",
   "description": "Slim fast overlay, no dependencies — just the basics",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "authors": [
     "Bruno Correia <mail@bcorreia.com>"
   ],

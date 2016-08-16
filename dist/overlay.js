@@ -1,5 +1,5 @@
 /**
- * overlay.js - version 1.0.1
+ * overlay.js - version 1.0.2
  *
  * https://github.com/bcorreia/overlay.js.git
  * Bruno Correia - mail@bcorreia.com
