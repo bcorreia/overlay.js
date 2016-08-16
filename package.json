@@ -1,6 +1,6 @@
 {
   "name": "overlay.js",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Slim fast overlay, no dependencies — just the basics",
   "main": "dist/overlay.js",
   "repository": {
