@@ -18,6 +18,7 @@ npm install overlay.js
 
 ## Usage
 ```javascript
+var Overlay = require('./overlay.js'); // commonJS (optional)
 element.addEventListener('click', function() {
     var layer = new Overlay({
         html: '',
