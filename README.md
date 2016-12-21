@@ -54,7 +54,7 @@ onRemove: function() {}
 .remove(); // remove overlay from the DOM
 ```
 
-## CSS
+### CSS
 ```css
 /* required */
 .overlay             { background: rgba(0, 0, 0, 0.75); width: 100vw; height: 100vh; position:fixed; top:0; animation: fade-in .5s; }
