@@ -28,7 +28,11 @@ require(['overlay.js'], function(Overlay) {
 
 element.addEventListener('click', function() {
     var layer = new Overlay({
-        html: '',
+        html: '',  // html string or node type
+        close: {
+            default: true, // default close button (boolean)
+            text: "Close" // innerHTML
+        },
         onAppend: function() {},
         onRemove: function() {}
     });
@@ -42,6 +46,12 @@ onAppend: function() {}
 
 // called right after `html` has been remove from document
 onRemove: function() {}
+```
+
+### Public Method
+```javascript
+ // called right after `html` has been appended to document
+.remove(); // remove overlay from the DOM
 ```
 
 ## CSS

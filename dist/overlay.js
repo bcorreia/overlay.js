@@ -1,5 +1,5 @@
 /**
- * overlay.js - version 1.0.2
+ * overlay.js - version 1.1.0
  *
  * https://github.com/bcorreia/overlay.js.git
  * Bruno Correia - mail@bcorreia.com
@@ -11,7 +11,11 @@
     var Overlay = (function() {
 
         var defaults = {
-            html: '',
+            html: '', // html string or node type
+            close: {
+                default: true,  // use default close button (boolean)
+                text: "Close" // innerHTML
+            },
             onAppend: function() {},
             onRemove: function() {}
         };
@@ -23,12 +27,21 @@
 
                 close.setAttribute('href', '#');
                 close.classList.add('-close');
-                close.innerHTML = 'Close';
+                close.innerHTML = this.settings.close.text;
 
                 stage.classList.add('overlay');
                 stage.innerHTML = '<div class="-inner"></div>';
-                stage.firstChild.appendChild(close);
-                stage.firstChild.insertAdjacentHTML('beforeend', this.settings.html);
+
+                if ( this.settings.close.default ) {
+                    stage.firstChild.appendChild(close);
+                }
+
+                if ( typeof this.settings.html === "string" ) {
+                    stage.firstChild.insertAdjacentHTML('beforeend', this.settings.html);
+                }
+                else {
+                    stage.firstChild.appendChild(this.settings.html);
+                }
 
                 close.addEventListener('click', function(event) {
                     event.preventDefault();
@@ -73,6 +86,11 @@
                 settings: { value: settings }
             })
             _.compile();
+
+            // alias: public method
+            this.remove = function() {
+                _.remove();
+            }
         }
 
         return Overlay;
