@@ -50,8 +50,8 @@ onRemove: function() {}
 
 ### Public Method
 ```javascript
- // called right after `html` has been appended to document
-.remove(); // remove overlay from the DOM
+ // remove overlay from the DOM
+.remove();
 ```
 
 ### CSS
