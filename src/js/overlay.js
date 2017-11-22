@@ -7,6 +7,7 @@
             html: '', // html string or node type
             close: {
                 default: true,  // use default close button (boolean)
+                onstage: false, // close on click event. `.stage` element
                 text: "Close" // innerHTML
             },
             onAppend: function() {},
@@ -41,6 +42,13 @@
                     this.remove(stage);
                 }.bind(this));
 
+                if ( this.settings.close.onstage ) {
+                    stage.addEventListener('click', function(event) {
+                        event.stopPropagation();
+                        this.remove(stage);
+                    }.bind(this));
+                }
+
                 this.append(stage);
             },
             append: function(stage) {
@@ -60,19 +68,48 @@
          * @returns {Object} Merged values of defaults and options
          *
          */
-         function extend(defaults, options) {
-             var a = Object.create(defaults);
-             Object.keys(options).map(function (prop) {
-                 prop in a && (a[prop] = options[prop]);
-             });
-             return a;
-         }
+         function extend() {
+            var extended = {},
+                deep = true,
+                i = 0,
+                length = arguments.length;
 
-         /**
-          * constructor
-          * @param {Object} options
-          *
-          */
+            // check if a deep merge
+            if ( Object.prototype.toString.call( arguments[0] ) === '[object Boolean]' ) {
+                deep = arguments[0];
+                i++;
+            }
+
+            // merge the object into the extended object
+            var merge = function (obj) {
+                for ( var prop in obj ) {
+                    if ( Object.prototype.hasOwnProperty.call( obj, prop ) ) {
+
+                        // if deep merge and property is an object, merge properties
+                        if ( deep && Object.prototype.toString.call(obj[prop]) === '[object Object]' ) {
+                            extended[prop] = extend( true, extended[prop], obj[prop] );
+                        }
+                        else {
+                            extended[prop] = obj[prop];
+                        }
+                    }
+                }
+            };
+
+            // loop through each object and conduct a merge
+            for ( ; i < length; i++ ) {
+                var obj = arguments[i];
+                merge(obj);
+            }
+
+            return extended;
+        };
+
+        /**
+         * constructor
+         * @param {Object} options
+         *
+         */
         function Overlay(options) {
             var settings = extend(defaults, options || {});
             var _ = Object.create(methods, {

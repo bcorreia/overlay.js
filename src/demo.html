@@ -30,6 +30,9 @@
 
         el.addEventListener('click', function() {
             var layer = new Overlay({
+                close: {
+                    onstage: true, // close on click event (anywhere on `.stage` element)
+                },
                 html: '<iframe width="853" height="480" src="https://www.youtube.com/embed/'+ video +'" frameborder="0" allowfullscreen></iframe>',
                 onAppend: function() {
                     console.log('onAppend callback');

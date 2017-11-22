@@ -31,6 +31,7 @@ element.addEventListener('click', function() {
         html: '',  // html string or node type
         close: {
             default: true, // default close button (boolean)
+            onstage: true, // close on click event (anywhere on `.stage` element)
             text: "Close" // innerHTML
         },
         onAppend: function() {},
